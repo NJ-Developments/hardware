@@ -2,6 +2,9 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     
+    // Add page loaded class for animations
+    document.body.classList.add('page-loaded');
+    
     // Initialize slideshow
     initSlider();
     
@@ -10,6 +13,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Update store open/closed status
     updateStoreStatus();
+    
+    // Initialize scroll effects
+    initScrollEffects();
     
 });
 
@@ -211,5 +217,63 @@ function updateStoreStatus() {
     } else {
         statusElement.textContent = 'closed';
         statusElement.className = 'closed';
+    }
+}
+
+// Scroll effects for header
+function initScrollEffects() {
+    const header = document.querySelector('#header_wrapper');
+    if (!header) return;
+    
+    let lastScroll = 0;
+    
+    window.addEventListener('scroll', function() {
+        const currentScroll = window.pageYOffset;
+        
+        // Add shadow on scroll
+        if (currentScroll > 10) {
+            header.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.1)';
+        } else {
+            header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.06)';
+        }
+        
+        lastScroll = currentScroll;
+    });
+    
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === '#' || href === '#modal') return;
+            
+            const target = document.querySelector(href);
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+    
+    // Highlight current day in footer hours
+    highlightCurrentDay();
+}
+
+// Highlight current day in footer store hours
+function highlightCurrentDay() {
+    const footerHours = document.querySelector('.footer-hours');
+    if (!footerHours) return;
+    
+    const days = footerHours.querySelectorAll('li');
+    const now = new Date();
+    const dayOfWeek = now.getDay(); // 0 = Sunday, 1 = Monday, etc.
+    
+    // Map JS day index to our list index (our list starts with Monday)
+    const listIndex = dayOfWeek === 0 ? 6 : dayOfWeek - 1;
+    
+    if (days[listIndex]) {
+        days[listIndex].classList.add('today');
     }
 }

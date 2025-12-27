@@ -1,33 +1,156 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Page Not Found</title>
+    <title>Page Not Found | Katz ACE Hardware</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&family=Roboto:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px 16px; border-radius: 3px; }
-      #message h3 { color: #888; font-weight: normal; font-size: 16px; margin: 16px 0 12px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+      :root {
+        --primary-red: #d7002a;
+        --primary-red-dark: #a50020;
+        --text-dark: #1a1a1a;
+        --text-light: #6b6b6b;
+        --bg-light: #f8f9fa;
+      }
+      
+      * { box-sizing: border-box; }
+      
+      body { 
+        background: linear-gradient(135deg, var(--bg-light) 0%, #e8ecf0 100%);
+        color: var(--text-dark);
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      #message { 
+        background: white;
+        max-width: 480px;
+        margin: 40px 20px;
+        padding: 50px 40px;
+        border-radius: 16px;
+        text-align: center;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        position: relative;
+        overflow: hidden;
+      }
+      
+      #message::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background: linear-gradient(90deg, var(--primary-red), var(--primary-red-dark));
+      }
+      
+      .error-icon {
+        width: 100px;
+        height: 100px;
+        background: linear-gradient(135deg, var(--primary-red) 0%, var(--primary-red-dark) 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 30px;
+        box-shadow: 0 10px 30px rgba(215, 0, 42, 0.3);
+      }
+      
+      .error-icon i {
+        font-size: 48px;
+        color: white;
+      }
+      
+      #message h1 { 
+        font-family: 'Roboto Slab', serif;
+        font-size: 72px;
+        font-weight: 700;
+        color: var(--primary-red);
+        margin: 0 0 10px;
+        letter-spacing: 2px;
+      }
+      
+      #message h2 { 
+        font-family: 'Roboto Slab', serif;
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--text-dark);
+        margin: 0 0 20px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      
+      #message p { 
+        line-height: 1.7;
+        margin: 0 0 30px;
+        font-size: 16px;
+        color: var(--text-light);
+      }
+      
+      #message a { 
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: linear-gradient(135deg, var(--primary-red) 0%, var(--primary-red-dark) 100%);
+        text-transform: uppercase;
+        text-decoration: none;
+        color: white;
+        padding: 16px 32px;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 14px;
+        letter-spacing: 1px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 20px rgba(215, 0, 42, 0.3);
+      }
+      
+      #message a:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 30px rgba(215, 0, 42, 0.4);
+      }
+      
       @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
+        #message {
+          margin: 20px;
+          padding: 40px 25px;
+        }
+        
+        #message h1 {
+          font-size: 56px;
+        }
+        
+        #message h2 {
+          font-size: 20px;
+        }
+        
+        .error-icon {
+          width: 80px;
+          height: 80px;
+        }
+        
+        .error-icon i {
+          font-size: 36px;
+        }
       }
     </style>
   </head>
   <body>
     <div id="message">
-      <h2>404</h2>
-      <h1>Page Not Found</h1>
-      <p>The specified file was not found on this website. Please check the URL for mistakes and try again.</p>
-      <h3>Why am I seeing this?</h3>
-      <p>This page was generated by the Firebase Command-Line Interface. To modify it, edit the <code>404.html</code> file in your project's configured <code>public</code> directory.</p>
+      <div class="error-icon">
+        <i class="fas fa-tools"></i>
+      </div>
+      <h1>404</h1>
+      <h2>Page Not Found</h2>
+      <p>Oops! The page you're looking for seems to have wandered off. Let's get you back to finding what you need.</p>
+      <a href="index.html"><i class="fas fa-home"></i> Return Home</a>
     </div>
   </body>
 </html>
