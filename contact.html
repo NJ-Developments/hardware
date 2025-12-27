@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Katz Ace Hardware - Glastonbury, CT</title>
+    <meta name="description" content="Contact Katz Ace Hardware - Visit us at 2687 Main Street, Glastonbury, CT or call (860) 633-3551.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Header Bar -->
+    <header class="top-header">
+        <div class="container">
+            <div class="top-header-content">
+                <a href="index.html" class="logo">
+                    <img src="https://www.katzhardware.com/sites/katzhardware.rpdesign.com/files/logo.png" alt="Katz Ace Hardware">
+                </a>
+                <div class="header-info-items">
+                    <div class="header-info-item">
+                        <div class="header-icon"><i class="fas fa-star"></i></div>
+                        <div class="header-info-text">
+                            <span class="header-label">ACE REWARDS</span>
+                            <a href="https://www.acehardware.com/user/login?rewardsSignup=true&fromlanding=true#joinAceRewards" target="_blank" class="header-btn">Join Now</a>
+                        </div>
+                    </div>
+                    <div class="header-info-item">
+                        <div class="header-icon phone-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div class="header-info-text">
+                            <span class="header-label">CALL</span>
+                            <a href="tel:8606333551" class="header-phone-btn">860-633-3551</a>
+                        </div>
+                    </div>
+                    <div class="header-info-item">
+                        <div class="header-icon location-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="header-info-text">
+                            <span class="header-label">VISIT</span>
+                            <span class="header-address">2687 Main Street<br>Glastonbury, CT</span>
+                            <a href="https://maps.google.com/?q=2687+Main+Street+Glastonbury+CT" target="_blank" class="header-directions">GET DIRECTIONS</a>
+                        </div>
+                    </div>
+                    <div class="header-info-item">
+                        <div class="header-icon hours-icon"><i class="fas fa-clock"></i></div>
+                        <div class="header-info-text">
+                            <span class="header-label">HOURS</span>
+                            <span class="header-status" id="store-status">WE ARE <span class="status-closed">CLOSED</span>.</span>
+                            <span class="header-hours">Mon–Sat: 7am - 6pm<br>Sun: 8am - 6pm</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Red Navigation Bar -->
+    <nav class="main-nav">
+        <div class="container">
+            <div class="nav-content">
+                <button class="mobile-menu-btn" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu">
+                    <li class="has-dropdown">
+                        <a href="https://www.acehardware.com/" target="_blank">SHOP ONLINE</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="https://www.acehardware.com/" target="_blank">ACE HARDWARE</a></li>
+                            <li><a href="https://www.benjaminmoore.com/" target="_blank">BENJAMIN MOORE</a></li>
+                            <li><a href="https://www.weber.com/" target="_blank">WEBER</a></li>
+                            <li><a href="https://biggreenegg.com/" target="_blank">BIG GREEN EGG</a></li>
+                            <li><a href="https://www.traegergrills.com/" target="_blank">TRAGER</a></li>
+                            <li><a href="https://www.yeti.com/" target="_blank">YETI</a></li>
+                            <li><a href="https://egopowerplus.com/" target="_blank">EGO</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="https://www.acehardware.com/local-ad" target="_blank">ACE FLYER</a></li>
+                    <li><a href="https://store.benjaminmoore.com/storefront/us/en/" target="_blank">BENJAMIN MOORE</a></li>
+                    <li><a href="https://www.acehardware.com/departments/outdoor-living/weber?query=weber" target="_blank">GRILLING</a></li>
+                    <li><a href="services.html">SERVICES</a></li>
+                    <li><a href="https://www.workstream.us/j/25c065b5/ace-hardware" target="_blank">EMPLOYMENT</a></li>
+                </ul>
+                <div class="nav-social">
+                    <a href="https://www.facebook.com/katzhardware/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/katzhardware" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="http://www.youtube.com/acehardware" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/katzacehardware" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="index.html">Home</a>
+                <span class="separator"><i class="fas fa-chevron-right"></i></span>
+                <span class="current">Contact Us</span>
+            </nav>
+            <h1>Contact Us</h1>
+            <p>We're here to help with all your hardware needs</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <span class="section-label">Get In Touch</span>
+                    <h2>We'd Love to Hear From You</h2>
+                    <p>Have questions about a project? Need expert advice? We're always happy to help. Reach out to us using the form or contact details below.</p>
+
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Our Location</h4>
+                                <p>2687 Main Street<br>Glastonbury, CT 06033</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <h4>Phone Number</h4>
+                                <p><a href="tel:8606333551">(860) 633-3551</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Business Hours</h4>
+                                <p>Mon-Sat: 7am - 6pm<br>Sun: 8am - 6pm</p>
+                                <span class="status-badge open"><i class="fas fa-circle"></i> We Are Open</span>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email Us</h4>
+                                <p><a href="mailto:info@katzhardware.com">info@katzhardware.com</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <h4>Follow Us</h4>
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com/katzhardware/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://twitter.com/katzhardware" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/katzacehardware" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="http://www.youtube.com/acehardware" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper">
+                    <div class="contact-form-card">
+                        <h3>Send Us a Message</h3>
+                        <p>Fill out the form below and we'll get back to you as soon as possible.</p>
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name <span class="required">*</span></label>
+                                    <input type="text" id="firstName" name="firstName" placeholder="John" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name <span class="required">*</span></label>
+                                    <input type="text" id="lastName" name="lastName" placeholder="Doe" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email Address <span class="required">*</span></label>
+                                    <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" placeholder="(860) 555-1234">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject <span class="required">*</span></label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Select a subject...</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="product">Product Question</option>
+                                    <option value="service">Service Request</option>
+                                    <option value="quote">Request a Quote</option>
+                                    <option value="feedback">Feedback</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Your Message <span class="required">*</span></label>
+                                <textarea id="message" name="message" rows="5" placeholder="How can we help you?" required></textarea>
+                            </div>
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" name="newsletter">
+                                    <span class="checkmark"></span>
+                                    Sign me up for news and special offers
+                                </label>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg btn-block">
+                                <span>Send Message</span>
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Find Us</span>
+                <h2>Visit Our Store</h2>
+                <p>Conveniently located on Main Street in Glastonbury, CT</p>
+            </div>
+            <div class="map-wrapper">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2987.8!2d-72.608!3d41.712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89e65388!2s2687+Main+St%2C+Glastonbury%2C+CT+06033!5e0!3m2!1sen!2sus!4v1"
+                    width="100%"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Katz Ace Hardware Location">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Info Bar -->
+    <section class="info-bar contact-info-bar">
+        <div class="container">
+            <div class="info-cards">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Free Parking</h3>
+                        <p>Convenient parking<br>available at our store</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-wheelchair"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Accessible</h3>
+                        <p>Wheelchair accessible<br>entrance and aisles</p>
+                    </div>
+                </div>
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Expert Help</h3>
+                        <p>Knowledgeable staff<br>ready to assist you</p>
+                    </div>
+                </div>
+                <div class="info-card highlight">
+                    <div class="info-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <div class="info-content">
+                        <h3>Delivery Available</h3>
+                        <p>Local delivery for<br>large orders</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="newsletter-section">
+                    <h3>Stay Updated</h3>
+                    <p>Subscribe to our newsletter for tips, deals, and store updates.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email address" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <span class="logo-text">KATZ<span class="ace-text">ACE</span>HARDWARE</span>
+                    </div>
+                    <p>Your helpful neighborhood hardware store, proudly serving Glastonbury and surrounding communities for over 50 years.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/katzhardware/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/katzhardware" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/katzacehardware" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="http://www.youtube.com/acehardware" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="brands.html">Brands</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="services.html">Key Duplicating</a></li>
+                        <li><a href="services.html">Paint Matching</a></li>
+                        <li><a href="services.html">Glass Cutting</a></li>
+                        <li><a href="services.html">Propane Filling</a></li>
+                        <li><a href="services.html">Screen Repair</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Additional Links</h4>
+                    <ul>
+                        <li><a href="https://www.acehardware.com/" target="_blank">Shop Online</a></li>
+                        <li><a href="https://www.acehardware.com/local-ad" target="_blank">Ace Flyer</a></li>
+                        <li><a href="https://store.benjaminmoore.com/storefront/us/en/" target="_blank">Benjamin Moore</a></li>
+                        <li><a href="https://www.acehardware.com/departments/outdoor-living/weber?query=weber" target="_blank">Grilling</a></li>
+                        <li><a href="https://www.workstream.us/j/25c065b5/ace-hardware" target="_blank">Employment</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 2687 Main Street, Glastonbury, CT</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:8606333551">(860) 633-3551</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@katzhardware.com">info@katzhardware.com</a></li>
+                        <li><i class="fas fa-clock"></i> Mon-Sat: 7am-6pm, Sun: 8am-6pm</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="brand-partners-bar">
+                <div class="container">
+                    <a href="https://www.acehardware.com/" target="_blank">ACE Hardware</a>
+                    <a href="https://www.benjaminmoore.com/" target="_blank">Benjamin Moore</a>
+                    <a href="https://www.weber.com/" target="_blank">Weber</a>
+                    <a href="https://www.scotts.com/" target="_blank">Scotts</a>
+                    <a href="https://egopowerplus.com/" target="_blank">EGO</a>
+                    <a href="https://www.traegergrills.com/" target="_blank">Traeger</a>
+                    <a href="https://www.yeti.com/" target="_blank">YETI</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 Katz Ace Hardware. All Rights Reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Accessibility</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>

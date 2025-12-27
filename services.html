@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | Katz Ace Hardware - Glastonbury, CT</title>
+    <meta name="description" content="Katz Ace Hardware services - Key cutting, paint matching, glass cutting, propane filling, and more in Glastonbury, CT.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Header Bar -->
+    <header class="top-header">
+        <div class="container">
+            <div class="top-header-content">
+                <a href="index.html" class="logo">
+                    <img src="https://www.katzhardware.com/sites/katzhardware.rpdesign.com/files/logo.png" alt="Katz Ace Hardware">
+                </a>
+                <div class="header-info-items">
+                    <div class="header-info-item">
+                        <div class="header-icon"><i class="fas fa-star"></i></div>
+                        <div class="header-info-text">
+                            <span class="header-label">ACE REWARDS</span>
+                            <a href="https://www.acehardware.com/user/login?rewardsSignup=true&fromlanding=true#joinAceRewards" target="_blank" class="header-btn">Join Now</a>
+                        </div>
+                    </div>
+                    <div class="header-info-item">
+                        <div class="header-icon phone-icon"><i class="fas fa-phone-alt"></i></div>
+                        <div class="header-info-text">
+                            <span class="header-label">CALL</span>
+                            <a href="tel:8606333551" class="header-phone-btn">860-633-3551</a>
+                        </div>
+                    </div>
+                    <div class="header-info-item">
+                        <div class="header-icon location-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="header-info-text">
+                            <span class="header-label">VISIT</span>
+                            <span class="header-address">2687 Main Street<br>Glastonbury, CT</span>
+                            <a href="https://maps.google.com/?q=2687+Main+Street+Glastonbury+CT" target="_blank" class="header-directions">GET DIRECTIONS</a>
+                        </div>
+                    </div>
+                    <div class="header-info-item">
+                        <div class="header-icon hours-icon"><i class="fas fa-clock"></i></div>
+                        <div class="header-info-text">
+                            <span class="header-label">HOURS</span>
+                            <span class="header-status" id="store-status">WE ARE <span class="status-closed">CLOSED</span>.</span>
+                            <span class="header-hours">Mon–Sat: 7am - 6pm<br>Sun: 8am - 6pm</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Red Navigation Bar -->
+    <nav class="main-nav">
+        <div class="container">
+            <div class="nav-content">
+                <button class="mobile-menu-btn" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu">
+                    <li class="has-dropdown">
+                        <a href="https://www.acehardware.com/" target="_blank">SHOP ONLINE</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="https://www.acehardware.com/" target="_blank">ACE HARDWARE</a></li>
+                            <li><a href="https://www.benjaminmoore.com/" target="_blank">BENJAMIN MOORE</a></li>
+                            <li><a href="https://www.weber.com/" target="_blank">WEBER</a></li>
+                            <li><a href="https://biggreenegg.com/" target="_blank">BIG GREEN EGG</a></li>
+                            <li><a href="https://www.traegergrills.com/" target="_blank">TRAGER</a></li>
+                            <li><a href="https://www.yeti.com/" target="_blank">YETI</a></li>
+                            <li><a href="https://egopowerplus.com/" target="_blank">EGO</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="https://www.acehardware.com/local-ad" target="_blank">ACE FLYER</a></li>
+                    <li><a href="https://store.benjaminmoore.com/storefront/us/en/" target="_blank">BENJAMIN MOORE</a></li>
+                    <li><a href="https://www.acehardware.com/departments/outdoor-living/weber?query=weber" target="_blank">GRILLING</a></li>
+                    <li><a href="services.html" class="active">SERVICES</a></li>
+                    <li><a href="https://www.workstream.us/j/25c065b5/ace-hardware" target="_blank">EMPLOYMENT</a></li>
+                </ul>
+                <div class="nav-social">
+                    <a href="https://www.facebook.com/katzhardware/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/katzhardware" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="http://www.youtube.com/acehardware" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/katzacehardware" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Services</h1>
+            <p>Everything you need to complete your project</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">What We Offer</span>
+                <h2>Our Services</h2>
+                <p>We offer a wide range of services to make your projects easier. From key cutting to paint matching, we've got you covered.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-key"></i>
+                    </div>
+                    <h3>Key Duplicating</h3>
+                    <p>Copy your home, office, or padlock key quickly and easily. Fast service while you wait.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Computer Paint Matching</h3>
+                    <p>Bring us any color sample and we'll match it perfectly with Benjamin Moore quality paint.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-window-maximize"></i>
+                    </div>
+                    <h3>Window Shades Cut to Fit</h3>
+                    <p>Create your own look with custom-cut window shades to fit any window perfectly.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-square"></i>
+                    </div>
+                    <h3>Glass Cut to Fit</h3>
+                    <p>Most hardware stores no longer cut glass, but we do! Custom sizes available.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-fire-flame-simple"></i>
+                    </div>
+                    <h3>Propane Filling</h3>
+                    <p>Safe, simple, and easy propane tank filling available 7 days a week. All tank sizes!</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h3>Cut Wire, Rope, Chain</h3>
+                    <p>We cut chains, wire, and rope to custom lengths on-site while you wait.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3>Ace Gift Cards</h3>
+                    <p>The perfect gift for any occasion. Great for DIY enthusiasts and homeowners!</p>
+                </div>
+                <div class="service-card highlight">
+                    <div class="service-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Ace Rewards</h3>
+                    <p>The best tools for saving money. Earn points, get exclusive offers, and save more!</p>
+                    <a href="https://www.acehardware.com/user/login?rewardsSignup=true" target="_blank" class="service-link">Join Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Need Help With a Project?</h2>
+                <p>Our expert team is ready to assist you with any home improvement needs.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn-white btn-lg">Contact Us</a>
+                    <a href="https://www.acehardware.com/" target="_blank" class="btn btn-outline-white btn-lg">Shop Online</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="newsletter-section">
+                    <h3>Stay Updated</h3>
+                    <p>Subscribe to our newsletter for tips, deals, and store updates.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email address" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <span class="logo-text">KATZ<span class="ace-text">ACE</span>HARDWARE</span>
+                    </div>
+                    <p>Your helpful neighborhood hardware store, proudly serving Glastonbury and surrounding communities for over 50 years.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/katzhardware/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/katzhardware" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/katzacehardware" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="http://www.youtube.com/acehardware" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="brands.html">Brands</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="services.html">Key Duplicating</a></li>
+                        <li><a href="services.html">Paint Matching</a></li>
+                        <li><a href="services.html">Glass Cutting</a></li>
+                        <li><a href="services.html">Propane Filling</a></li>
+                        <li><a href="services.html">Screen Repair</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Additional Links</h4>
+                    <ul>
+                        <li><a href="https://www.acehardware.com/" target="_blank">Shop Online</a></li>
+                        <li><a href="https://www.acehardware.com/local-ad" target="_blank">Ace Flyer</a></li>
+                        <li><a href="https://store.benjaminmoore.com/storefront/us/en/" target="_blank">Benjamin Moore</a></li>
+                        <li><a href="https://www.acehardware.com/departments/outdoor-living/weber?query=weber" target="_blank">Grilling</a></li>
+                        <li><a href="https://www.workstream.us/j/25c065b5/ace-hardware" target="_blank">Employment</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 2687 Main Street, Glastonbury, CT</li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:8606333551">(860) 633-3551</a></li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:info@katzhardware.com">info@katzhardware.com</a></li>
+                        <li><i class="fas fa-clock"></i> Mon-Sat: 7am-6pm, Sun: 8am-6pm</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="brand-partners-bar">
+                <div class="container">
+                    <a href="https://www.acehardware.com/" target="_blank">ACE Hardware</a>
+                    <a href="https://www.benjaminmoore.com/" target="_blank">Benjamin Moore</a>
+                    <a href="https://www.weber.com/" target="_blank">Weber</a>
+                    <a href="https://www.scotts.com/" target="_blank">Scotts</a>
+                    <a href="https://egopowerplus.com/" target="_blank">EGO</a>
+                    <a href="https://www.traegergrills.com/" target="_blank">Traeger</a>
+                    <a href="https://www.yeti.com/" target="_blank">YETI</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2025 Katz Ace Hardware. All Rights Reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Accessibility</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>

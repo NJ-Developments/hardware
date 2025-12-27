@@ -1,0 +1,18 @@
+document.addEventListener(
+  "click",
+  function(event) {
+    // If user either clicks X button OR clicks outside the modal window, then close modal by calling closeModal()
+    if (
+      event.target.matches(".overlay")
+    ) {
+      closeModal()
+    }
+  },
+  false
+)
+
+function closeModal() {
+  window.location = "#";
+}
+
+

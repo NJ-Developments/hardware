@@ -1,0 +1,22 @@
+jQuery(function() {
+
+
+	jQuery('#open_or_closed').openingTimes({
+		openString: "open",
+		closedString: "closed",
+		openClass: "open",
+		closedClass: "closed",
+		openingTimes: {
+			'Monday'    : ['07:00' , '18:00' ],
+			'Tuesday'   : ['07:00' , '18:00' ],
+			'Wednesday' : ['07:00' , '18:00' ],
+			'Thursday'  : ['07:00' , '18:00' ],
+			'Friday'    : ['07:00' , '18:00' ],
+			'Saturday'  : ['07:00' , '18:00' ],
+			'Sunday'    : ['08:00' , '18:00' ]
+		}
+	});
+
+
+
+});
