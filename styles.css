@@ -268,7 +268,7 @@ a.button2:hover {
 }
 
 #main-menu a {
-    padding: 23px 35px;
+    padding: 17px 26px;
     display: block;
     text-decoration: none;
     color: #FFF;
@@ -276,7 +276,7 @@ a.button2:hover {
     white-space: nowrap;
     text-transform: uppercase;
     border-right: none;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 500;
     letter-spacing: 0.5px;
 }
@@ -295,7 +295,7 @@ a.button2:hover {
     padding: 0;
     margin: 0;
     background: #333;
-    top: 66px;
+    top: 49px;
     overflow: visible !important;
 }
 
@@ -313,14 +313,14 @@ a.button2:hover {
 }
 
 #main-menu li li a {
-    min-width: 220px;
+    min-width: 180px;
     margin: 0;
     border-bottom: 1px solid #525252;
     text-align: left;
     overflow: hidden;
-    padding: 18px 24px;
+    padding: 14px 18px;
     color: #DEDEDE;
-    font-size: 18px;
+    font-size: 14px;
     border-right: 0;
 }
 
@@ -358,8 +358,8 @@ a.button2:hover {
 }
 
 .social-icons li a {
-    width: 46px;
-    height: 46px;
+    width: 35px;
+    height: 35px;
     color: #FFF;
     padding: 0;
     display: flex;
@@ -371,7 +371,7 @@ a.button2:hover {
     border: none;
     line-height: 100%;
     text-align: center;
-    font-size: 23px;
+    font-size: 17px;
 }
 
 .social-icons li a:hover {
@@ -382,7 +382,7 @@ a.button2:hover {
 /* Slideshow */
 .slideshow {
     position: relative;
-    margin-top: 175px;
+    margin-top: 200px;
 }
 
 .slider-wrapper {
@@ -742,7 +742,7 @@ h4 a:hover {
 
 /* Services Page */
 .services-page {
-    margin-top: 175px;\n}
+    margin-top: 200px;
 }
 
 .services-page #container {
@@ -808,7 +808,7 @@ h4 a:hover {
 
 /* About Page */
 .about-page {
-    margin-top: 175px;
+    margin-top: 200px;
 }
 
 .about-page #container {
