@@ -20,7 +20,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize scroll to top button
     initScrollToTop();
     
-});
+    // Initialize scroll progress indicator
+    initScrollProgress();
+    
+    // Add active page indicator to nav
+    highlightCurrentPage();
 
 // Slideshow functionality
 function initSlider() {
@@ -121,6 +125,47 @@ function initSlider() {
             prevSlide();
             startSlideshow();
         });
+    }
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowLeft') {
+            stopSlideshow();
+            prevSlide();
+            startSlideshow();
+        } else if (e.key === 'ArrowRight') {
+            stopSlideshow();
+            nextSlide();
+            startSlideshow();
+        }
+    });
+    
+    // Touch/swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    sliderWrapper.addEventListener('touchstart', function(e) {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    
+    sliderWrapper.addEventListener('touchend', function(e) {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    }, { passive: true });
+    
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        const diff = touchStartX - touchEndX;
+        
+        if (Math.abs(diff) > swipeThreshold) {
+            stopSlideshow();
+            if (diff > 0) {
+                nextSlide(); // Swipe left = next
+            } else {
+                prevSlide(); // Swipe right = prev
+            }
+            startSlideshow();
+        }
     }
 }
 
@@ -371,4 +416,33 @@ function handleNewsletterSubmit(event) {
     form.innerHTML = '<div class="newsletter-success"><i class="fa-solid fa-check-circle"></i> Thank you for subscribing! We\'ll keep you updated.</div>';
     
     return false;
+}
+
+// Scroll progress indicator
+function initScrollProgress() {
+    const progressBar = document.createElement('div');
+    progressBar.className = 'scroll-progress';
+    document.body.appendChild(progressBar);
+    
+    window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = (scrollTop / docHeight) * 100;
+        progressBar.style.width = scrollPercent + '%';
+    });
+}
+
+// Highlight current page in navigation
+function highlightCurrentPage() {
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    const navLinks = document.querySelectorAll('#main-menu a');
+    
+    navLinks.forEach(link => {
+        const linkPath = link.getAttribute('href');
+        if (linkPath === currentPath || 
+            (currentPath === '' && linkPath === 'index.html') ||
+            (currentPath === 'index.html' && linkPath === 'index.html')) {
+            link.classList.add('current-page');
+        }
+    });
 }
