@@ -40,6 +40,24 @@ function initSlider() {
     captionDisplay.className = 'caption-display';
     sliderWrapper.appendChild(captionDisplay);
     
+    // Create dot navigation
+    const dotsContainer = document.createElement('div');
+    dotsContainer.className = 'slider-dots';
+    for (let i = 0; i < slides.length; i++) {
+        const dot = document.createElement('button');
+        dot.className = 'slider-dot';
+        dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
+        dot.addEventListener('click', function() {
+            stopSlideshow();
+            showSlide(i);
+            startSlideshow();
+        });
+        dotsContainer.appendChild(dot);
+    }
+    sliderWrapper.appendChild(dotsContainer);
+    
+    const dots = dotsContainer.querySelectorAll('.slider-dot');
+    
     // Show first slide
     showSlide(0);
     
@@ -49,6 +67,11 @@ function initSlider() {
     function showSlide(index) {
         // Hide all slides
         slides.forEach(slide => slide.classList.remove('active'));
+        
+        // Update dots
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === index);
+        });
         
         // Show current slide
         slides[index].classList.add('active');
@@ -226,6 +249,7 @@ function updateStoreStatus() {
 // Scroll effects for header
 function initScrollEffects() {
     const header = document.querySelector('#header_wrapper');
+    const topHeader = document.querySelector('.topheader');
     if (!header) return;
     
     let lastScroll = 0;
@@ -233,11 +257,17 @@ function initScrollEffects() {
     window.addEventListener('scroll', function() {
         const currentScroll = window.pageYOffset;
         
-        // Add shadow on scroll
-        if (currentScroll > 10) {
-            header.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.1)';
+        // Add shadow and compact mode on scroll
+        if (currentScroll > 50) {
+            header.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.12)';
+            if (topHeader) {
+                topHeader.classList.add('scrolled');
+            }
         } else {
             header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.06)';
+            if (topHeader) {
+                topHeader.classList.remove('scrolled');
+            }
         }
         
         lastScroll = currentScroll;
@@ -329,4 +359,16 @@ function initScrollReveal() {
         el.classList.add('reveal-on-scroll');
         revealObserver.observe(el);
     });
+}
+
+// Newsletter signup handler
+function handleNewsletterSubmit(event) {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.querySelector('input[type="email"]').value;
+    
+    // Show success message (in a real implementation, this would send to a server)
+    form.innerHTML = '<div class="newsletter-success"><i class="fa-solid fa-check-circle"></i> Thank you for subscribing! We\'ll keep you updated.</div>';
+    
+    return false;
 }

@@ -78,6 +78,25 @@ html {
     color: #fff;
 }
 
+/* Page load animation */
+body {
+    opacity: 0;
+    animation: fadeInPage 0.5s ease-out 0.1s forwards;
+}
+
+@keyframes fadeInPage {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    body {
+        opacity: 1;
+        animation: none;
+    }
+}
+
 /* Focus styles for accessibility */
 a:focus,
 button:focus,
@@ -160,6 +179,20 @@ div.topheader {
     left: 0;
     right: 0;
     z-index: 1008;
+    transition: all 0.35s ease;
+}
+
+div.topheader.scrolled #header {
+    padding: 4px 24px;
+}
+
+div.topheader.scrolled #logo img {
+    height: 70px;
+}
+
+div.topheader.scrolled .region-contact-no .content table td {
+    padding: 6px 25px;
+    font-size: 14px;
 }
 
 #header_wrapper {
@@ -167,6 +200,7 @@ div.topheader {
     z-index: 1008;
     background-color: var(--bg-white);
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+    transition: box-shadow 0.3s ease;
 }
 
 #header {
@@ -176,6 +210,11 @@ div.topheader {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    transition: padding 0.35s ease;
+}
+
+#logo img {
+    transition: height 0.35s ease;
 }
 
 .logo_wrap {
@@ -557,6 +596,44 @@ a.button2:hover {
     position: relative;
     width: 100%;
     line-height: 0;
+}
+
+/* Slider Dot Navigation */
+.slider-dots {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    display: flex;
+    gap: 12px;
+    padding: 10px 18px;
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 50px;
+    backdrop-filter: blur(8px);
+}
+
+.slider-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.slider-dot:hover {
+    background: rgba(255, 255, 255, 0.7);
+    transform: scale(1.15);
+}
+
+.slider-dot.active {
+    background: var(--primary-red);
+    border-color: #fff;
+    transform: scale(1.2);
+    box-shadow: 0 0 12px rgba(215, 0, 42, 0.6);
 }
 
 #slider {
@@ -1065,6 +1142,102 @@ a.button2:hover {
     transform: scale(1.08);
     filter: grayscale(0%);
     opacity: 1;
+}
+
+/* Newsletter Section */
+.newsletter-section {
+    margin-top: 40px;
+    padding-top: 35px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.newsletter-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.newsletter-text h4 {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.newsletter-text h4 i {
+    color: var(--primary-red);
+}
+
+.newsletter-text p {
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    font-size: 14px;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 12px;
+    flex: 1;
+    max-width: 450px;
+}
+
+.newsletter-form input[type="email"] {
+    flex: 1;
+    padding: 14px 18px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: var(--border-radius-sm);
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.newsletter-form input[type="email"]::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.newsletter-form input[type="email"]:focus {
+    border-color: var(--primary-red);
+    background: rgba(255, 255, 255, 0.12);
+    outline: none;
+}
+
+.newsletter-form button {
+    padding: 14px 25px;
+    background: linear-gradient(135deg, var(--primary-red) 0%, var(--primary-red-dark) 100%);
+    color: #fff;
+    border: none;
+    border-radius: var(--border-radius-sm);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.newsletter-form button:hover {
+    background: linear-gradient(135deg, var(--primary-red-light) 0%, var(--primary-red) 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(215, 0, 42, 0.4);
+}
+
+.newsletter-success {
+    background: rgba(34, 197, 94, 0.15);
+    border: 2px solid rgba(34, 197, 94, 0.5);
+    color: #4ade80;
+    padding: 14px 20px;
+    border-radius: var(--border-radius-sm);
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 /* Footer Credit */
@@ -2041,13 +2214,19 @@ h4 a:hover {
     
     /* Mobile Menu Container */
     .menu-navigation-container {
-        display: none;
+        display: block;
         width: 100%;
         background: #b80024;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-out, opacity 0.3s ease;
+        opacity: 0;
     }
     
     .menu-navigation-container.active {
-        display: block;
+        max-height: 600px;
+        opacity: 1;
+        transition: max-height 0.5s ease-in, opacity 0.3s ease;
     }
     
     #main-menu ul {
@@ -2459,6 +2638,17 @@ h4 a:hover {
         min-height: 220px;
     }
     
+    .slider-dots {
+        bottom: 15px;
+        gap: 8px;
+        padding: 8px 14px;
+    }
+    
+    .slider-dot {
+        width: 10px;
+        height: 10px;
+    }
+    
     .caption-display {
         max-width: 90%;
     }
@@ -2779,6 +2969,22 @@ h4 a:hover {
     
     .footer-links a {
         font-size: 13px;
+    }
+    
+    /* Newsletter responsive */
+    .newsletter-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .newsletter-form {
+        max-width: 100%;
+        flex-direction: column;
+    }
+    
+    .newsletter-form button {
+        justify-content: center;
     }
     
     .footer_credit .copyright {
@@ -3637,6 +3843,23 @@ button:focus {
     border-radius: var(--border-radius-md);
     margin: 0 20px 40px;
     overflow: hidden;
+    position: relative;
+}
+
+.promo-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 200%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.15) 50%, transparent 100%);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(50%); }
 }
 
 .promo-banner a {
@@ -3649,15 +3872,23 @@ button:focus {
     text-decoration: none;
     font-size: 16px;
     transition: all var(--transition-normal);
+    position: relative;
+    z-index: 1;
 }
 
 .promo-banner a:hover {
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.15);
     gap: 20px;
 }
 
 .promo-banner i:first-child {
     font-size: 24px;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
 }
 
 .promo-banner span {
@@ -3707,17 +3938,35 @@ button:focus {
     color: var(--text-dark);
     transition: all var(--transition-normal);
     box-shadow: var(--shadow-sm);
+    position: relative;
+    overflow: hidden;
+}
+
+.dept-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-red) 0%, var(--primary-red-dark) 100%);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.dept-card:hover::before {
+    transform: scaleX(1);
 }
 
 .dept-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
     border-color: var(--primary-red);
 }
 
 .dept-card:hover i {
     color: var(--primary-red);
-    transform: scale(1.1);
+    transform: scale(1.15) rotate(-5deg);
 }
 
 .dept-card i {
@@ -3729,6 +3978,11 @@ button:focus {
 .dept-card span {
     font-weight: 600;
     font-size: 15px;
+    transition: color 0.3s ease;
+}
+
+.dept-card:hover span {
+    color: var(--primary-red);
 }
 
 /* ==========================================================================
