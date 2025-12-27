@@ -17,6 +17,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize scroll effects
     initScrollEffects();
     
+    // Initialize scroll to top button
+    initScrollToTop();
+    
 });
 
 // Slideshow functionality
@@ -276,4 +279,54 @@ function highlightCurrentDay() {
     if (days[listIndex]) {
         days[listIndex].classList.add('today');
     }
+}
+
+// Scroll to top button
+function initScrollToTop() {
+    const scrollBtn = document.getElementById('scroll-top');
+    if (!scrollBtn) return;
+    
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 400) {
+            scrollBtn.classList.add('visible');
+        } else {
+            scrollBtn.classList.remove('visible');
+        }
+    });
+    
+    // Scroll to top on click
+    scrollBtn.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+    
+    // Initialize scroll reveal animations
+    initScrollReveal();
+}
+
+// Scroll reveal animations for elements
+function initScrollReveal() {
+    const revealElements = document.querySelectorAll('.dept-card, .trust-item, .service-card, .footer-col');
+    
+    if (revealElements.length === 0) return;
+    
+    const revealObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+    
+    revealElements.forEach(function(el) {
+        el.classList.add('reveal-on-scroll');
+        revealObserver.observe(el);
+    });
 }
