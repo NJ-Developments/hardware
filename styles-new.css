@@ -2114,7 +2114,7 @@ a[href^="tel:"].slide-btn i {
 
 .brand-item {
     flex: 1;
-    max-width: 180px;
+    max-width: 220px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2131,7 +2131,7 @@ a[href^="tel:"].slide-btn i {
 }
 
 .brand-item img {
-    max-height: 70px;
+    max-height: 100px;
     max-width: 100%;
     width: auto;
     object-fit: contain;
@@ -3431,18 +3431,16 @@ a[href^="tel:"].slide-btn i {
 }
 
 .service-icon {
-    width: 48px;
-    height: 48px;
+    width: 60px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(215, 0, 42, 0.1);
-    border-radius: var(--radius-md);
     margin-bottom: var(--space-md);
 }
 
 .service-icon i {
-    font-size: 1.25rem;
+    font-size: 2.25rem;
     color: var(--primary);
 }
 
