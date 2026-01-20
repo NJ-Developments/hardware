@@ -223,7 +223,8 @@ button {
 #header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    gap: var(--space-xl);
     padding: var(--space-md) var(--space-xl);
     max-width: 1400px;
     margin: 0 auto;
@@ -373,22 +374,25 @@ button {
 .menu-wrap .full-wrap {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding: 0 var(--space-xl);
 }
 
 /* Main Menu */
 #main-menu {
-    flex: 1;
+    display: flex;
+    justify-content: center;
 }
 
 .menu-navigation-container {
     display: flex;
+    justify-content: center;
 }
 
 .menu-navigation-container > .menu {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: var(--space-xs);
 }
 
@@ -545,23 +549,9 @@ button {
     color: var(--dark);
 }
 
-.nav-btn.rewards i {
-    color: var(--accent-gold);
-}
-
-.nav-btn.shop {
-    background: var(--primary);
-    color: var(--white);
-}
-
-.nav-btn.shop:hover {
-    background: var(--primary-dark);
-}
-
-@media (max-width: 992px) {
-    .nav-actions {
-        display: none;
-    }
+/* ACE Rewards Nav Item */
+.menu-navigation-container > .menu > li.rewards-item > a i {
+    margin-right: 4px;
 }
 
 /* ============================================
