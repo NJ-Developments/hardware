@@ -79,9 +79,10 @@
    TOP BAR - CLEAN MINIMAL STYLE
    ============================================ */
 .top-bar {
-    background: var(--dark);
+    background: var(--white);
     padding: var(--space-sm) 0;
     font-size: 0.85rem;
+    border-bottom: 1px solid var(--gray-200);
 }
 
 .top-bar-inner {
@@ -93,13 +94,18 @@
     justify-content: space-between;
 }
 
-.top-bar-left {
+.top-bar-logo img {
+    height: 50px;
+    width: auto;
+}
+
+.top-bar-info {
     display: flex;
     align-items: center;
     gap: var(--space-md);
 }
 
-.top-bar-left #open_or_closed {
+.top-bar-info #open_or_closed {
     background: var(--accent-green);
     color: var(--white);
     padding: 2px 10px;
@@ -110,22 +116,16 @@
     letter-spacing: 0.5px;
 }
 
-.top-bar-left #open_or_closed.closed {
+.top-bar-info #open_or_closed.closed {
     background: var(--primary);
 }
 
 .top-bar-hours {
-    color: var(--gray-400);
-}
-
-.top-bar-right {
-    display: flex;
-    align-items: center;
-    gap: var(--space-lg);
+    color: var(--primary);
 }
 
 .top-bar-link {
-    color: var(--gray-300);
+    color: var(--primary);
     display: flex;
     align-items: center;
     gap: var(--space-xs);
@@ -133,11 +133,11 @@
 }
 
 .top-bar-link:hover {
-    color: var(--white);
+    color: var(--primary-dark);
 }
 
 .top-bar-link i {
-    color: var(--primary-light);
+    color: var(--primary);
     font-size: 0.9rem;
 }
 
