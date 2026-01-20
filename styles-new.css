@@ -598,6 +598,10 @@ button {
     border: 1px solid var(--gray-200);
 }
 
+.nav-btn.rewards i {
+    color: var(--primary);
+}
+
 .nav-btn.rewards:hover {
     background: var(--gray-200);
     color: var(--dark);
