@@ -131,11 +131,27 @@
     }
     
     body {
-        padding-bottom: 70px;
+        padding-bottom: 75px;
     }
     
     #scroll-top {
-        bottom: 90px;
+        bottom: 95px;
+        right: 15px;
+        width: 44px;
+        height: 44px;
+    }
+}
+
+/* Enhanced Quick Bar Item Touch Targets */
+@media (max-width: 768px) {
+    .quick-bar-item {
+        padding: var(--space-md) var(--space-sm);
+        min-height: 60px;
+        font-size: 0.65rem;
+    }
+    
+    .quick-bar-item i {
+        font-size: 1.4rem;
     }
 }
 
@@ -249,6 +265,26 @@ button {
 
 #logo img:hover {
     opacity: 0.85;
+}
+
+/* Mobile Call Button in Header - Hidden on Desktop */
+.mobile-header-call {
+    display: none;
+}
+
+/* Mobile Location Button - Hidden on Desktop */
+.mobile-header-location {
+    display: none;
+}
+
+/* Mobile Header Actions Container - Hidden on Desktop */
+.mobile-header-actions {
+    display: none;
+}
+
+/* Mobile Menu Info - Hidden on Desktop */
+.mobile-menu-info {
+    display: none;
 }
 
 /* Header Info - Combined contact info */
@@ -389,12 +425,89 @@ button {
     }
     
     #logo img {
-        height: 50px;
+        height: 48px;
+        top: 0;
     }
     
     #header {
-        padding: var(--space-md);
+        padding: var(--space-sm) var(--space-md);
+        justify-content: space-between;
+        flex-direction: row;
+        gap: var(--space-sm);
+    }
+    
+    /* Mobile Header Action Buttons Container */
+    .mobile-header-actions {
+        display: flex;
+        align-items: center;
+        gap: var(--space-sm);
+    }
+    
+    /* Mobile Location Button */
+    .mobile-header-location {
+        display: flex;
+        align-items: center;
         justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: var(--gray-100);
+        color: var(--gray-600);
+        border-radius: var(--radius-md);
+        font-size: 1rem;
+        transition: all var(--transition-fast);
+    }
+    
+    .mobile-header-location:active {
+        background: var(--gray-200);
+        transform: scale(0.95);
+    }
+    
+    /* Mobile Call Button - Prominent with text */
+    .mobile-header-call {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        height: 40px;
+        padding: 0 var(--space-md);
+        background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+        color: var(--white);
+        border-radius: var(--radius-md);
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        box-shadow: 0 2px 8px rgba(215, 0, 42, 0.3);
+        transition: all var(--transition-fast);
+    }
+    
+    .mobile-header-call i {
+        font-size: 0.9rem;
+    }
+    
+    .mobile-header-call:active {
+        transform: scale(0.97);
+        box-shadow: 0 1px 4px rgba(215, 0, 42, 0.3);
+    }
+    
+    /* Text visible on slightly larger phones */
+    .mobile-header-call .call-text {
+        display: inline;
+    }
+}
+
+/* Very small phones - icon only call button */
+@media (max-width: 380px) {
+    .mobile-header-call {
+        width: 40px;
+        padding: 0;
+    }
+    
+    .mobile-header-call .call-text {
+        display: none;
+    }
+    
+    #logo img {
+        height: 42px;
     }
 }
 
@@ -590,6 +703,10 @@ button {
 
 @media (max-width: 992px) {
     .nav-socials {
+        display: none;
+    }
+    
+    .nav-btn.rewards {
         display: none;
     }
 }
@@ -1085,6 +1202,27 @@ a[href^="tel:"].slide-btn i {
     transform: translateY(-8px);
     box-shadow: var(--shadow-xl);
     border-color: var(--primary);
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .dept-card:hover {
+        transform: none;
+    }
+    
+    .dept-card:active {
+        transform: scale(0.98);
+        background: var(--primary);
+    }
+    
+    .dept-card:active i,
+    .dept-card:active span {
+        color: var(--white);
+    }
+    
+    .dept-card:active::before {
+        opacity: 1;
+    }
 }
 
 .dept-card:hover::before {
@@ -2494,6 +2632,48 @@ a[href^="tel:"].slide-btn i {
     color: var(--white);
 }
 
+/* Mobile Modal Improvements */
+@media (max-width: 576px) {
+    #modal .modal-content {
+        width: 95%;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+    
+    .modal-header {
+        padding: var(--space-md);
+    }
+    
+    .modal-header h3 {
+        font-size: 1.1rem;
+    }
+    
+    .modal-close-x {
+        width: 40px;
+        height: 40px;
+        font-size: 28px;
+    }
+    
+    .modal-address {
+        padding: var(--space-md);
+    }
+    
+    .map-responsive {
+        height: 200px;
+    }
+    
+    .modal-actions {
+        flex-direction: column;
+        padding: var(--space-md);
+    }
+    
+    .modal-actions a {
+        padding: var(--space-lg);
+        font-size: 1rem;
+        min-height: 52px;
+    }
+}
+
 /* ============================================
    RESPONSIVE STYLES
    ============================================ */
@@ -2539,6 +2719,10 @@ a[href^="tel:"].slide-btn i {
         padding: var(--space-3xl);
     }
     
+    .services-quick-list {
+        grid-template-columns: 1fr;
+    }
+    
     .region-contact-no {
         display: none;
     }
@@ -2556,6 +2740,49 @@ a[href^="tel:"].slide-btn i {
 @media (max-width: 768px) {
     .nav-toggle {
         display: flex;
+        width: auto;
+        justify-content: flex-start;
+        padding: var(--space-md) var(--space-lg);
+        background: var(--primary);
+        color: var(--white);
+        font-weight: 600;
+        min-height: 50px;
+        gap: var(--space-sm);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-size: 0.85rem;
+    }
+    
+    /* Menu wrap layout for mobile */
+    .menu-wrap .full-wrap {
+        justify-content: flex-start;
+        padding: 0;
+    }
+    
+    .nav-toggle .hamburger {
+        gap: 5px;
+    }
+    
+    .nav-toggle .hamburger span {
+        width: 20px;
+        height: 2px;
+        background: var(--white);
+        border-radius: 1px;
+        transition: all 0.3s ease;
+    }
+    
+    /* Animated hamburger to X */
+    .nav-toggle.active .hamburger span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+    
+    .nav-toggle.active .hamburger span:nth-child(2) {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+    
+    .nav-toggle.active .hamburger span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
     }
     
     .menu-navigation-container {
@@ -2567,27 +2794,97 @@ a[href^="tel:"].slide-btn i {
         background: var(--white);
         z-index: 1000;
         display: none;
-        padding: var(--space-4xl) var(--space-xl);
+        padding: 0;
+        padding-top: 56px;
+        padding-bottom: env(safe-area-inset-bottom, 20px);
         overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
     }
     
     .menu-navigation-container.active {
         display: block;
+        animation: slideInFromTop 0.25s ease-out;
+    }
+    
+    @keyframes slideInFromTop {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    /* Mobile menu close button - Improved */
+    .menu-navigation-container::before {
+        content: '✕  Close';
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 56px;
+        padding: 0 var(--space-lg);
+        background: var(--dark);
+        text-align: center;
+        font-weight: 600;
+        font-size: 0.9rem;
+        color: var(--white);
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        cursor: pointer;
+        z-index: 1001;
     }
     
     .menu-navigation-container > .menu {
         flex-direction: column;
         gap: 0;
+        padding: 0;
     }
     
     .menu-navigation-container > .menu > li > a {
-        padding: var(--space-md) 0;
-        font-size: 1.25rem;
+        padding: var(--space-lg) var(--space-xl);
+        font-size: 0.95rem;
         border-bottom: 1px solid var(--gray-200);
+        min-height: 56px;
+        display: flex;
+        align-items: center;
+        color: var(--dark);
+        font-weight: 500;
+    }
+    
+    .menu-navigation-container > .menu > li:first-child > a {
+        border-top: 1px solid var(--gray-200);
+    }
+    
+    .menu-navigation-container > .menu > li > a:active {
+        background: var(--gray-100);
     }
     
     .menu-navigation-container > .menu > li > a::after {
         display: none;
+    }
+    
+    .menu-navigation-container > .menu > li.expanded > a {
+        justify-content: space-between;
+    }
+    
+    .menu-navigation-container > .menu > li.expanded > a::before {
+        position: static;
+        transform: none;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid var(--gray-400);
+        transition: transform 0.3s ease;
+    }
+    
+    .menu-navigation-container > .menu > li.expanded.open > a::before {
+        transform: rotate(180deg);
+        border-top-color: var(--primary);
     }
     
     .submenu {
@@ -2598,12 +2895,120 @@ a[href^="tel:"].slide-btn i {
         box-shadow: none;
         border: none;
         border-radius: 0;
-        padding-left: var(--space-lg);
         display: none;
+        background: var(--gray-50);
+        margin: 0;
+        padding: var(--space-sm) 0;
+        border-bottom: 1px solid var(--gray-200);
     }
     
-    .menu-navigation-container > .menu > li.expanded:hover .submenu {
+    .menu-navigation-container > .menu > li.expanded.open .submenu {
         display: block;
+        animation: expandDown 0.2s ease-out;
+    }
+    
+    @keyframes expandDown {
+        from {
+            opacity: 0;
+            max-height: 0;
+        }
+        to {
+            opacity: 1;
+            max-height: 500px;
+        }
+    }
+    
+    .submenu li a {
+        padding: var(--space-md) var(--space-2xl);
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        font-size: 0.9rem;
+        color: var(--gray-600);
+        border-radius: 0;
+        border-left: 3px solid transparent;
+        transition: all 0.15s ease;
+    }
+    
+    .submenu li a:active {
+        background: var(--gray-200);
+        border-left-color: var(--primary);
+        color: var(--primary);
+    }
+    
+    /* Mobile Menu Store Info Section */
+    .mobile-menu-info {
+        display: block;
+        margin-top: var(--space-lg);
+        padding: var(--space-lg);
+        background: var(--gray-100);
+        border-top: 1px solid var(--gray-200);
+    }
+    
+    .mobile-menu-hours {
+        display: flex;
+        align-items: flex-start;
+        gap: var(--space-md);
+        padding-bottom: var(--space-md);
+        margin-bottom: var(--space-md);
+        border-bottom: 1px solid var(--gray-200);
+    }
+    
+    .mobile-menu-hours i {
+        color: var(--primary);
+        font-size: 1.1rem;
+        margin-top: 2px;
+    }
+    
+    .mobile-menu-hours div {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+    
+    .mobile-menu-hours strong {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--dark);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    
+    .mobile-menu-hours span {
+        font-size: 0.9rem;
+        color: var(--gray-600);
+    }
+    
+    .mobile-menu-contact {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+    
+    .mobile-menu-phone,
+    .mobile-menu-address {
+        display: flex;
+        align-items: center;
+        gap: var(--space-sm);
+        padding: var(--space-sm) var(--space-md);
+        background: var(--white);
+        border-radius: var(--radius-md);
+        font-size: 0.9rem;
+        color: var(--gray-700);
+        transition: all var(--transition-fast);
+    }
+    
+    .mobile-menu-phone i,
+    .mobile-menu-address i {
+        color: var(--primary);
+        width: 20px;
+        text-align: center;
+    }
+    
+    .mobile-menu-phone:active,
+    .mobile-menu-address:active {
+        background: var(--gray-200);
+        transform: scale(0.98);
     }
     
     .social-icons {
@@ -2612,11 +3017,24 @@ a[href^="tel:"].slide-btn i {
     
     .nivoSlider,
     .nivoSlider img.slide {
-        height: 400px;
+        height: 350px;
+    }
+    
+    .slidecap {
+        padding: 0 var(--space-md);
+        bottom: 70px;
     }
     
     .slidecap h1 {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
+        line-height: 1.2;
+        margin-bottom: var(--space-sm);
+    }
+    
+    .slidecap p {
+        font-size: 0.9rem;
+        margin-bottom: var(--space-md);
+        line-height: 1.4;
     }
     
     .promo-banner {
@@ -2627,13 +3045,33 @@ a[href^="tel:"].slide-btn i {
     .diy-tips-section,
     .testimonials-section,
     .why-choose-us {
-        padding: var(--space-3xl) var(--space-md);
+        padding: var(--space-2xl) var(--space-md);
+    }
+    
+    .departments-section h2,
+    .why-choose-us h2 {
+        font-size: 1.5rem;
+        margin-bottom: var(--space-xl);
     }
     
     .departments-grid,
     .trust-grid,
     .diy-tips-grid {
-        gap: var(--space-md);
+        gap: var(--space-sm);
+    }
+    
+    /* Improved department cards for mobile */
+    .dept-card {
+        padding: var(--space-lg) var(--space-md);
+        gap: var(--space-sm);
+    }
+    
+    .dept-card i {
+        font-size: 1.75rem;
+    }
+    
+    .dept-card span {
+        font-size: 0.85rem;
     }
     
     .footer-grid {
@@ -2686,15 +3124,38 @@ a[href^="tel:"].slide-btn i {
     .footer-simple-content {
         flex-direction: column;
         text-align: center;
+        gap: var(--space-lg);
     }
     
     .footer-info {
         flex-direction: column;
+        gap: var(--space-md);
     }
     
     .footer-nav {
         flex-wrap: wrap;
         justify-content: center;
+        gap: var(--space-md);
+    }
+    
+    .footer-nav a {
+        padding: var(--space-sm) var(--space-md);
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .footer-social-simple {
+        gap: var(--space-md);
+    }
+    
+    .footer-social-simple a {
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
     }
 }
 
@@ -2705,6 +3166,19 @@ a[href^="tel:"].slide-btn i {
     
     .departments-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-sm);
+    }
+    
+    .dept-card {
+        padding: var(--space-md);
+    }
+    
+    .dept-card i {
+        font-size: 1.5rem;
+    }
+    
+    .dept-card span {
+        font-size: 0.75rem;
     }
     
     .diy-tips-grid {
@@ -2717,15 +3191,91 @@ a[href^="tel:"].slide-btn i {
     
     .slide-buttons {
         flex-direction: column;
+        gap: var(--space-sm);
     }
     
     .slide-btn {
         width: 100%;
         justify-content: center;
+        padding: var(--space-md);
+        font-size: 0.9rem;
     }
     
     .nivo-directionNav {
         display: none;
+    }
+    
+    .nivoSlider,
+    .nivoSlider img.slide {
+        height: 300px;
+    }
+    
+    .slidecap {
+        bottom: 50px;
+    }
+    
+    .slidecap h1 {
+        font-size: 1.25rem;
+    }
+    
+    .slidecap p {
+        font-size: 0.85rem;
+        margin-bottom: var(--space-sm);
+    }
+    
+    /* Services Preview Mobile */
+    .services-preview-content {
+        padding: var(--space-xl) var(--space-md);
+    }
+    
+    .services-preview-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .services-quick-list {
+        gap: var(--space-sm);
+    }
+    
+    .services-quick-list li {
+        font-size: 0.9rem;
+        padding: var(--space-sm) 0;
+    }
+    
+    .btn-services {
+        width: 100%;
+        justify-content: center;
+        padding: var(--space-md);
+    }
+    
+    /* Footer Mobile */
+    .footer-details p {
+        font-size: 0.85rem;
+    }
+    
+    .footer-logo-sm {
+        height: 45px;
+    }
+    
+    .footer-copyright {
+        padding: var(--space-md);
+        font-size: 0.75rem;
+    }
+    
+    /* Brands section mobile */
+    .brands-header {
+        margin-bottom: var(--space-lg);
+    }
+    
+    .brands-title {
+        font-size: 1.25rem;
+    }
+    
+    .brand-item {
+        padding: var(--space-sm);
+    }
+    
+    .brand-item img {
+        max-height: 28px;
     }
 }
 
@@ -3397,6 +3947,142 @@ a.animated-underline:hover::after {
 .dept-card, .testimonial-card {
     transform-style: preserve-3d;
     perspective: 1000px;
+}
+
+/* ============================================
+   TOUCH DEVICE OPTIMIZATIONS
+   ============================================ */
+@media (hover: none) and (pointer: coarse) {
+    /* Larger touch targets */
+    .nav-toggle,
+    .slide-btn,
+    .btn-services,
+    .footer-nav a,
+    .quick-bar-item {
+        min-height: 48px;
+    }
+    
+    /* Disable hover transforms on touch devices */
+    .dept-card:hover,
+    .brand-item:hover,
+    .trust-item:hover,
+    .service-card:hover {
+        transform: none;
+    }
+    
+    /* Active states instead of hover */
+    .dept-card:active,
+    .brand-item:active {
+        transform: scale(0.98);
+        opacity: 0.9;
+    }
+    
+    .slide-btn:active {
+        transform: scale(0.95);
+    }
+    
+    /* Remove hover effects that don't work well on touch */
+    .btn-services:hover {
+        transform: none;
+    }
+    
+    .btn-services:active {
+        background: var(--primary-dark);
+    }
+    
+    /* Ensure links are easily tappable */
+    .footer-links a,
+    .submenu li a {
+        padding: var(--space-md);
+    }
+    
+    /* Better scrolling on iOS */
+    .menu-navigation-container {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* Landscape phone optimization */
+@media (max-width: 896px) and (orientation: landscape) {
+    .nivoSlider,
+    .nivoSlider img.slide {
+        height: 280px;
+    }
+    
+    .slidecap {
+        bottom: 40px;
+    }
+    
+    .slidecap h1 {
+        font-size: 1.25rem;
+    }
+    
+    .slidecap p {
+        font-size: 0.85rem;
+        margin-bottom: var(--space-sm);
+    }
+    
+    .slide-buttons {
+        gap: var(--space-sm);
+    }
+    
+    .slide-btn {
+        padding: var(--space-sm) var(--space-md);
+        font-size: 0.85rem;
+    }
+    
+    .slider-dots {
+        bottom: 15px;
+    }
+    
+    .mobile-quick-bar {
+        padding: var(--space-xs) 0;
+    }
+    
+    .quick-bar-item {
+        min-height: 50px;
+        padding: var(--space-sm);
+    }
+}
+
+/* Very small phones (iPhone SE, etc.) */
+@media (max-width: 375px) {
+    .departments-grid {
+        gap: var(--space-xs);
+    }
+    
+    .dept-card {
+        padding: var(--space-sm);
+    }
+    
+    .dept-card i {
+        font-size: 1.25rem;
+    }
+    
+    .dept-card span {
+        font-size: 0.7rem;
+    }
+    
+    .slidecap h1 {
+        font-size: 1.1rem;
+    }
+    
+    .slide-btn {
+        padding: var(--space-sm) var(--space-md);
+        font-size: 0.8rem;
+    }
+    
+    .footer-details p {
+        font-size: 0.8rem;
+    }
+    
+    .quick-bar-item {
+        font-size: 0.6rem;
+    }
+    
+    .quick-bar-item i {
+        font-size: 1.2rem;
+    }
 }
 
 /* ============================================

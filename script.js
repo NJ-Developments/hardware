@@ -196,13 +196,26 @@ function initMobileMenu() {
     if (navToggle && menuContainer) {
         navToggle.addEventListener('click', function(e) {
             e.preventDefault();
-            menuContainer.classList.toggle('active');
+            const isActive = menuContainer.classList.toggle('active');
             navToggle.classList.toggle('active');
             
+            // Prevent body scroll when menu is open
+            document.body.style.overflow = isActive ? 'hidden' : '';
+            
             // Update toggle text for accessibility
-            const isOpen = menuContainer.classList.contains('active');
-            navToggle.setAttribute('aria-expanded', isOpen);
-            navToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+            navToggle.setAttribute('aria-expanded', isActive);
+            navToggle.setAttribute('aria-label', isActive ? 'Close navigation menu' : 'Open navigation menu');
+        });
+        
+        // Close menu when clicking on the close area (::before pseudo-element area)
+        menuContainer.addEventListener('click', function(e) {
+            // Check if click is in the top 60px (close button area)
+            if (e.clientY <= 60 && e.target === menuContainer) {
+                menuContainer.classList.remove('active');
+                navToggle.classList.remove('active');
+                document.body.style.overflow = '';
+                navToggle.setAttribute('aria-expanded', 'false');
+            }
         });
     }
     
@@ -237,13 +250,33 @@ function initMobileMenu() {
         }
     }
     
+    // Close menu when clicking a non-expandable link
+    const menuLinks = document.querySelectorAll('.menu-navigation-container .menu a');
+    menuLinks.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            const parentLi = link.closest('li');
+            // Only close if not an expanded item (those are handled separately)
+            if (!parentLi.classList.contains('expanded') || parentLi.classList.contains('open')) {
+                // Close the menu after a short delay to allow navigation
+                setTimeout(function() {
+                    if (window.innerWidth <= 992 && menuContainer.classList.contains('active')) {
+                        menuContainer.classList.remove('active');
+                        navToggle.classList.remove('active');
+                        document.body.style.overflow = '';
+                    }
+                }, 100);
+            }
+        });
+    });
+    
     // Close menu when clicking outside
     document.addEventListener('click', function(e) {
         if (window.innerWidth <= 992) {
             const menuWrap = document.querySelector('.menu-wrap');
-            if (menuContainer && !menuWrap.contains(e.target)) {
+            if (menuContainer && menuContainer.classList.contains('active') && !menuWrap.contains(e.target)) {
                 menuContainer.classList.remove('active');
-                navToggle.textContent = 'Navigation';
+                navToggle.classList.remove('active');
+                document.body.style.overflow = '';
                 expandedItems.forEach(item => item.classList.remove('open'));
             }
         }
@@ -251,9 +284,10 @@ function initMobileMenu() {
     
     // Close menu on escape key
     document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && menuContainer.classList.contains('active')) {
+        if (e.key === 'Escape' && menuContainer && menuContainer.classList.contains('active')) {
             menuContainer.classList.remove('active');
-            navToggle.textContent = 'Navigation';
+            navToggle.classList.remove('active');
+            document.body.style.overflow = '';
             expandedItems.forEach(item => item.classList.remove('open'));
         }
     });
@@ -267,8 +301,13 @@ function initMobileMenu() {
             
             // Reset menu state on desktop
             if (window.innerWidth > 992) {
-                menuContainer.classList.remove('active');
-                navToggle.textContent = 'Navigation';
+                if (menuContainer) {
+                    menuContainer.classList.remove('active');
+                }
+                if (navToggle) {
+                    navToggle.classList.remove('active');
+                }
+                document.body.style.overflow = '';
                 expandedItems.forEach(item => item.classList.remove('open'));
             }
         }, 100);
