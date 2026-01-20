@@ -287,7 +287,7 @@ button {
     align-items: center;
     gap: var(--space-xs);
     font-weight: 500;
-    transition: color var(--transition-fast);
+    transition: all var(--transition-fast);
 }
 
 .header-link:hover {
@@ -297,6 +297,26 @@ button {
 .header-link i {
     color: var(--primary);
     font-size: 0.85rem;
+}
+
+/* Phone link - more prominent */
+.header-link[href^="tel:"] {
+    background: var(--primary);
+    color: var(--white);
+    padding: 8px 16px;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+}
+
+.header-link[href^="tel:"] i {
+    color: var(--white);
+}
+
+.header-link[href^="tel:"]:hover {
+    background: var(--primary-dark);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px var(--primary-glow);
 }
 
 /* Header Action Buttons */
@@ -552,6 +572,7 @@ button {
 /* ACE Rewards Nav Item */
 .menu-navigation-container > .menu > li.rewards-item > a i {
     margin-right: 4px;
+    color: var(--primary);
 }
 
 /* ============================================
@@ -710,6 +731,35 @@ button {
     background: var(--white);
     color: var(--dark);
     border-color: var(--white);
+}
+
+/* Call Button - More Prominent */
+.slide-btn.call,
+a[href^="tel:"].slide-btn {
+    background: var(--white);
+    color: var(--primary);
+    border: 2px solid var(--white);
+    font-weight: 700;
+}
+
+.slide-btn.call:hover,
+a[href^="tel:"].slide-btn:hover {
+    background: var(--primary);
+    color: var(--white);
+    border-color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.3);
+}
+
+.slide-btn.call i,
+a[href^="tel:"].slide-btn i {
+    animation: pulse-ring 1.5s ease-out infinite;
+}
+
+@keyframes pulse-ring {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
 
 /* Slider Navigation Arrows */
