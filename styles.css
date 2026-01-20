@@ -100,15 +100,9 @@ img.loaded {
     color: #fff;
 }
 
-/* Page load animation */
+/* Page load animation - removed opacity: 0 to prevent black screen issues */
 body {
-    opacity: 0;
-    animation: fadeInPage 0.5s ease-out 0.1s forwards;
-}
-
-@keyframes fadeInPage {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    opacity: 1;
 }
 
 /* Respect reduced motion preference */
@@ -4969,3 +4963,249 @@ button:focus {
         color: #000 !important;
     }
 }
+
+/* ============================================
+   FEATURED BRAND SECTION (Inspired by Johnson's ACE)
+   ============================================ */
+.featured-brand-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    border-radius: var(--border-radius-lg);
+    padding: 50px;
+    margin: 60px 0;
+    color: #fff;
+    overflow: hidden;
+    position: relative;
+}
+
+.featured-brand-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 300px;
+    background: var(--primary-red);
+    opacity: 0.1;
+    border-radius: 50%;
+    transform: translate(50%, -50%);
+}
+
+.featured-brand-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 1;
+}
+
+.featured-brand-badge {
+    display: inline-block;
+    background: var(--primary-red);
+    color: #fff;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    width: fit-content;
+}
+
+.featured-brand-section h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+.featured-brand-section p {
+    font-size: 1.1rem;
+    color: #ccc;
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
+.featured-brand-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.featured-brand-features span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    color: #fff;
+}
+
+.featured-brand-features i {
+    color: var(--primary-red);
+}
+
+.featured-brand-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--primary-red);
+    color: #fff;
+    padding: 14px 30px;
+    border-radius: var(--border-radius-md);
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all var(--transition-normal);
+    width: fit-content;
+}
+
+.featured-brand-btn:hover {
+    background: var(--primary-red-dark);
+    transform: translateX(5px);
+    color: #fff;
+}
+
+.featured-brand-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.featured-brand-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-xl);
+}
+
+@media (max-width: 900px) {
+    .featured-brand-section {
+        grid-template-columns: 1fr;
+        padding: 35px;
+    }
+    
+    .featured-brand-section h2 {
+        font-size: 1.8rem;
+    }
+    
+    .featured-brand-image {
+        order: -1;
+    }
+}
+
+/* ============================================
+   DIY TIPS SECTION (Inspired by Do it Best)
+   ============================================ */
+.diy-tips-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.diy-tips-section h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 40px;
+}
+
+.diy-tips-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.diy-tip-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    border-radius: var(--border-radius-lg);
+    padding: 30px 25px;
+    text-align: center;
+    transition: all var(--transition-normal);
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.diy-tip-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-red);
+}
+
+.diy-tip-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--primary-red) 0%, var(--primary-red-dark) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    transition: transform var(--transition-normal);
+}
+
+.diy-tip-card:hover .diy-tip-icon {
+    transform: scale(1.1);
+}
+
+.diy-tip-icon i {
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+.diy-tip-card h3 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.diy-tip-card p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 15px;
+    flex-grow: 1;
+}
+
+.diy-tip-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--primary-red);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: gap var(--transition-fast);
+}
+
+.diy-tip-card:hover .diy-tip-link {
+    gap: 10px;
+}
+
+@media (max-width: 1100px) {
+    .diy-tips-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .diy-tips-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .diy-tips-section h2 {
+        font-size: 1.6rem;
+    }
+}
+

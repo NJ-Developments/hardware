@@ -22,9 +22,23 @@
     <meta name="theme-color" content="#d7002a">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles-new.css">
 </head>
 <body>
+
+<!-- Top Bar -->
+<div class="top-bar">
+    <div class="top-bar-inner">
+        <div class="top-bar-left">
+            <span id="open_or_closed" class="open">Open</span>
+            <span class="top-bar-hours">Mon-Sat 7am-6pm • Sun 8am-6pm</span>
+        </div>
+        <div class="top-bar-right">
+            <a href="tel:8606333551" class="top-bar-link"><i class="fa-solid fa-phone"></i> 860-633-3551</a>
+            <a href="#modal" class="top-bar-link"><i class="fa-solid fa-location-dot"></i> Glastonbury, CT</a>
+        </div>
+    </div>
+</div>
     
 <!-- Header -->
 <div class="topheader">
@@ -38,59 +52,17 @@
                 </div>
             </div>
             
-            <div class="region region-contact-no">
-                <div class="content">
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <img alt="Stars" src="Katz ACE Hardware __files/stars.png" class="header-icon">
-                                    <div class="td-content">
-                                        <h2>ACE REWARDS</h2>
-                                        <a class="button" href="https://www.acehardware.com/user/login?rewardsSignup=true&fromlanding=true#joinAceRewards" target="_blank">Join Now</a>
-                                    </div>
-                                </td>
-                                <td>
-                                    <img alt="Phone Icon" src="Katz ACE Hardware __files/phone_0.png" class="header-icon">
-                                    <div class="td-content">
-                                        <h2>CALL</h2>
-                                        <a class="button2" href="tel:8606333551">860-633-3551</a>
-                                    </div>
-                                </td>
-                                <td>
-                                    <img alt="Map Icon" src="Katz ACE Hardware __files/map.png" class="header-icon">
-                                    <div class="td-content">
-                                        <h2>VISIT</h2>
-                                        2687 Main Street<br>
-                                        Glastonbury, CT
-                                        <h4><a href="#modal">Get Directions</a></h4>
-                                    </div>
-                                    
-                                    <div id="modal">
-                                        <div class="modal-content">
-                                            <div class="copy">
-                                                <div class="map-responsive">
-                                                    <iframe allowfullscreen="" height="450" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2978.8!2d-72.60!3d41.71!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDQyJzM2LjAiTiA3MsKwMzYnMDAuMCJX!5e0!3m2!1sen!2sus!4v1234567890" style="border:0;" width="600"></iframe>
-                                                </div>
-                                                <a class="button-close-modal" href="#">Close</a>
-                                            </div>
-                                        </div>
-                                        <div class="overlay"></div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <img alt="Clock Icon" src="Katz ACE Hardware __files/clock.png" class="header-icon">
-                                    <div class="td-content">
-                                        <h2>HOURS</h2>
-                                        <h4>We are <span id="open_or_closed" class="closed">closed</span>.</h4>
-                                        Mon–Sat: 7am - 6pm<br>
-                                        Sun: 8am - 6pm
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+            <!-- Directions Modal -->
+            <div id="modal">
+                <div class="modal-content">
+                    <div class="copy">
+                        <div class="map-responsive">
+                            <iframe allowfullscreen="" height="450" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2978.8!2d-72.60!3d41.71!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDQyJzM2LjAiTiA3MsKwMzYnMDAuMCJX!5e0!3m2!1sen!2sus!4v1234567890" style="border:0;" width="600"></iframe>
+                        </div>
+                        <a class="button-close-modal" href="#">Close</a>
+                    </div>
                 </div>
+                <div class="overlay"></div>
             </div>
         </header>
     </div>
@@ -145,15 +117,17 @@
                 </div>
             </nav>
             
-            <!-- Social Links -->
-            <span class="social-icons">
-                <ul>
-                    <li><a class="fb" href="https://www.facebook.com/katzhardware/" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
-                    <li><a class="twitter" href="https://twitter.com/katzhardware" target="_blank" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a></li>
-                    <li><a class="youtube" href="http://www.youtube.com/acehardware" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a></li>
-                    <li><a class="instagram" href="https://www.instagram.com/katzacehardware" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
-                </ul>
-            </span>
+            <!-- Nav Action Buttons -->
+            <div class="nav-actions">
+                <a href="https://www.acehardware.com/user/login?rewardsSignup=true&fromlanding=true#joinAceRewards" target="_blank" class="nav-btn rewards">
+                    <i class="fa-solid fa-star"></i>
+                    <span>ACE Rewards</span>
+                </a>
+                <a href="https://www.acehardware.com" target="_blank" class="nav-btn shop">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span>Shop Online</span>
+                </a>
+            </div>
         </div>
     </div>
 </div>
@@ -214,15 +188,6 @@
             <div class="content-sidebar-wrap">
                 <div id="content">
                     <section id="post-content" role="main">
-                        
-                        <!-- Promo Banner -->
-                        <div class="promo-banner">
-                            <a href="https://www.acehardware.com/local-ad" target="_blank">
-                                <i class="fa-solid fa-tag"></i>
-                                <span><strong>Check Out This Week's Deals!</strong> View our current ACE Flyer for savings on tools, paint, outdoor & more.</span>
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                        </div>
                         
                         <!-- Shop by Department -->
                         <div class="departments-section">
@@ -310,6 +275,58 @@
                             </div>
                         </div>
                         
+                        <!-- Featured Brand Spotlight (Inspired by Johnson's ACE) -->
+                        <div class="featured-brand-section">
+                            <div class="featured-brand-content">
+                                <div class="featured-brand-badge">Featured Brand</div>
+                                <h2>Save on Milwaukee Tools & Accessories</h2>
+                                <p>Milwaukee is defined by unprecedented speed, agility, innovation, and quality. Shop our selection of power tools, hand tools, and accessories.</p>
+                                <div class="featured-brand-features">
+                                    <span><i class="fa-solid fa-check-circle"></i> Cordless Power Tools</span>
+                                    <span><i class="fa-solid fa-check-circle"></i> Hand Tools</span>
+                                    <span><i class="fa-solid fa-check-circle"></i> Accessories</span>
+                                </div>
+                                <a href="https://www.acehardware.com/brands/milwaukee" target="_blank" class="featured-brand-btn">
+                                    Shop Milwaukee <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
+                            <div class="featured-brand-image">
+                                <img src="https://www.acehardware.com/medias/126408-milwaukee-tools-hero.jpg" alt="Milwaukee Power Tools" onerror="this.style.display='none'">
+                            </div>
+                        </div>
+                        
+                        <!-- DIY Tips Section (Inspired by Do it Best) -->
+                        <div class="diy-tips-section">
+                            <h2>DIY Tips & Project Ideas</h2>
+                            <p class="section-subtitle">Get inspired for your next home improvement project</p>
+                            <div class="diy-tips-grid">
+                                <a href="https://www.acehardware.com/departments/outdoor-living" target="_blank" class="diy-tip-card">
+                                    <div class="diy-tip-icon"><i class="fa-solid fa-fire-burner"></i></div>
+                                    <h3>Get Ready for Grilling Season</h3>
+                                    <p>Tips for choosing the perfect grill and essential accessories for outdoor cooking.</p>
+                                    <span class="diy-tip-link">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+                                </a>
+                                <a href="https://www.acehardware.com/departments/paint-and-supplies" target="_blank" class="diy-tip-card">
+                                    <div class="diy-tip-icon"><i class="fa-solid fa-paint-roller"></i></div>
+                                    <h3>Interior Painting Like a Pro</h3>
+                                    <p>Expert techniques for flawless walls using Benjamin Moore premium paints.</p>
+                                    <span class="diy-tip-link">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+                                </a>
+                                <a href="https://www.acehardware.com/departments/lawn-and-garden" target="_blank" class="diy-tip-card">
+                                    <div class="diy-tip-icon"><i class="fa-solid fa-seedling"></i></div>
+                                    <h3>Spring Lawn Care Essentials</h3>
+                                    <p>Everything you need to know for a lush, healthy lawn this season.</p>
+                                    <span class="diy-tip-link">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+                                </a>
+                                <a href="https://www.acehardware.com/departments/tools" target="_blank" class="diy-tip-card">
+                                    <div class="diy-tip-icon"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                                    <h3>Must-Have Tools for Beginners</h3>
+                                    <p>Build your toolkit with these essential tools every homeowner needs.</p>
+                                    <span class="diy-tip-link">Learn More <i class="fa-solid fa-arrow-right"></i></span>
+                                </a>
+                            </div>
+                        </div>
+                        
                         <!-- Customer Testimonials -->
                         <div class="testimonials-section">
                             <h2>What Our Customers Say</h2>
@@ -324,8 +341,11 @@
                                     </div>
                                     <p class="testimonial-text">"The staff here is incredibly helpful. They took the time to help me find exactly what I needed for my project and even gave me tips on how to do it right!"</p>
                                     <div class="testimonial-author">
-                                        <strong>Sarah M.</strong>
-                                        <span>Glastonbury Resident</span>
+                                        <div class="testimonial-avatar">SM</div>
+                                        <div class="testimonial-author-info">
+                                            <strong>Sarah M.</strong>
+                                            <span>Glastonbury Resident</span>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="testimonial-card">
@@ -338,8 +358,11 @@
                                     </div>
                                     <p class="testimonial-text">"Been coming here for 30 years. You just can't beat the personal service. They know my name and always have great recommendations."</p>
                                     <div class="testimonial-author">
-                                        <strong>Robert K.</strong>
-                                        <span>Local Contractor</span>
+                                        <div class="testimonial-avatar">RK</div>
+                                        <div class="testimonial-author-info">
+                                            <strong>Robert K.</strong>
+                                            <span>Local Contractor</span>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="testimonial-card">
@@ -352,8 +375,11 @@
                                     </div>
                                     <p class="testimonial-text">"Their paint matching is incredible. Brought in an old chip and they matched it perfectly. So much better than the big box stores!"</p>
                                     <div class="testimonial-author">
-                                        <strong>Jennifer L.</strong>
-                                        <span>DIY Enthusiast</span>
+                                        <div class="testimonial-avatar">JL</div>
+                                        <div class="testimonial-author-info">
+                                            <strong>Jennifer L.</strong>
+                                            <span>DIY Enthusiast</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -365,6 +391,26 @@
         </div>
     </div>
 </div>
+
+<!-- Newsletter Section -->
+<section class="newsletter-section">
+    <div class="newsletter-content">
+        <div class="newsletter-text">
+            <h2>Stay in the Loop</h2>
+            <p>Get exclusive deals, DIY tips, and seasonal project ideas delivered to your inbox.</p>
+        </div>
+        <form class="newsletter-form" onsubmit="handleNewsletterSubmit(event); return false;">
+            <div class="newsletter-input-group">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit">
+                    <span>Subscribe</span>
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </div>
+            <p class="newsletter-privacy">We respect your privacy. Unsubscribe anytime.</p>
+        </form>
+    </div>
+</section>
 
 <!-- Footer -->
 <footer id="footer">
@@ -476,6 +522,26 @@
 <button id="scroll-top" aria-label="Scroll to top" title="Back to top">
     <i class="fa-solid fa-chevron-up"></i>
 </button>
+
+<!-- Mobile Quick Contact Bar -->
+<div class="mobile-quick-bar">
+    <a href="tel:8606333551" class="quick-bar-item">
+        <i class="fa-solid fa-phone"></i>
+        <span>Call</span>
+    </a>
+    <a href="https://maps.google.com/?q=2687+Main+Street+Glastonbury+CT" target="_blank" class="quick-bar-item">
+        <i class="fa-solid fa-location-dot"></i>
+        <span>Directions</span>
+    </a>
+    <a href="https://www.acehardware.com" target="_blank" class="quick-bar-item">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span>Shop</span>
+    </a>
+    <a href="services.html" class="quick-bar-item">
+        <i class="fa-solid fa-wrench"></i>
+        <span>Services</span>
+    </a>
+</div>
 
 <script src="script.js"></script>
 </body>

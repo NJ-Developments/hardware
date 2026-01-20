@@ -16,9 +16,23 @@
     <meta name="theme-color" content="#d7002a">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles-new.css">
 </head>
 <body>
+
+<!-- Top Bar -->
+<div class="top-bar">
+    <div class="top-bar-inner">
+        <div class="top-bar-left">
+            <span id="open_or_closed" class="open">Open</span>
+            <span class="top-bar-hours">Mon-Sat 7am-6pm • Sun 8am-6pm</span>
+        </div>
+        <div class="top-bar-right">
+            <a href="tel:8606333551" class="top-bar-link"><i class="fa-solid fa-phone"></i> 860-633-3551</a>
+            <a href="#modal" class="top-bar-link"><i class="fa-solid fa-location-dot"></i> Glastonbury, CT</a>
+        </div>
+    </div>
+</div>
     
 <!-- Header -->
 <div class="topheader">
@@ -32,59 +46,17 @@
                 </div>
             </div>
             
-            <div class="region region-contact-no">
-                <div class="content">
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <img alt="Stars" src="Katz ACE Hardware __files/stars.png" class="header-icon">
-                                    <div class="td-content">
-                                        <h2>ACE REWARDS</h2>
-                                        <a class="button" href="https://www.acehardware.com/user/login?rewardsSignup=true&fromlanding=true#joinAceRewards" target="_blank">Join Now</a>
-                                    </div>
-                                </td>
-                                <td>
-                                    <img alt="Phone Icon" src="Katz ACE Hardware __files/phone_0.png" class="header-icon">
-                                    <div class="td-content">
-                                        <h2>CALL</h2>
-                                        <a class="button2" href="tel:8606333551">860-633-3551</a>
-                                    </div>
-                                </td>
-                                <td>
-                                    <img alt="Map Icon" src="Katz ACE Hardware __files/map.png" class="header-icon">
-                                    <div class="td-content">
-                                        <h2>VISIT</h2>
-                                        2687 Main Street<br>
-                                        Glastonbury, CT
-                                        <h4><a href="#modal">Get Directions</a></h4>
-                                    </div>
-                                    
-                                    <div id="modal">
-                                        <div class="modal-content">
-                                            <div class="copy">
-                                                <div class="map-responsive">
-                                                    <iframe allowfullscreen="" height="450" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2978.8!2d-72.60!3d41.71!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDQyJzM2LjAiTiA3MsKwMzYnMDAuMCJX!5e0!3m2!1sen!2sus!4v1234567890" style="border:0;" width="600"></iframe>
-                                                </div>
-                                                <a class="button-close-modal" href="#">Close</a>
-                                            </div>
-                                        </div>
-                                        <div class="overlay"></div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <img alt="Clock Icon" src="Katz ACE Hardware __files/clock.png" class="header-icon">
-                                    <div class="td-content">
-                                        <h2>HOURS</h2>
-                                        <h4>We are <span id="open_or_closed" class="closed">closed</span>.</h4>
-                                        Mon–Sat: 7am - 6pm<br>
-                                        Sun: 8am - 6pm
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+            <!-- Directions Modal -->
+            <div id="modal">
+                <div class="modal-content">
+                    <div class="copy">
+                        <div class="map-responsive">
+                            <iframe allowfullscreen="" height="450" loading="lazy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2978.8!2d-72.60!3d41.71!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDQyJzM2LjAiTiA3MsKwMzYnMDAuMCJX!5e0!3m2!1sen!2sus!4v1234567890" style="border:0;" width="600"></iframe>
+                        </div>
+                        <a class="button-close-modal" href="#">Close</a>
+                    </div>
                 </div>
+                <div class="overlay"></div>
             </div>
         </header>
     </div>
@@ -139,15 +111,17 @@
                 </div>
             </nav>
             
-            <!-- Social Links -->
-            <span class="social-icons">
-                <ul>
-                    <li><a class="fb" href="https://www.facebook.com/katzhardware/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
-                    <li><a class="twitter" href="https://twitter.com/katzhardware" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li>
-                    <li><a class="youtube" href="http://www.youtube.com/acehardware" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
-                    <li><a class="instagram" href="https://www.instagram.com/katzacehardware" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
-                </ul>
-            </span>
+            <!-- Nav Action Buttons -->
+            <div class="nav-actions">
+                <a href="https://www.acehardware.com/user/login?rewardsSignup=true&fromlanding=true#joinAceRewards" target="_blank" class="nav-btn rewards">
+                    <i class="fa-solid fa-star"></i>
+                    <span>ACE Rewards</span>
+                </a>
+                <a href="https://www.acehardware.com" target="_blank" class="nav-btn shop">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span>Shop Online</span>
+                </a>
+            </div>
         </div>
     </div>
 </div>
@@ -183,8 +157,7 @@
                                 <span class="service-tag">Quick Service</span>
                             </div>
                             
-                            <div class="service-card featured">
-                                <div class="service-badge">Popular</div>
+                            <div class="service-card">
                                 <div class="service-icon"><i class="fa-solid fa-fill-drip"></i></div>
                                 <h3>Computer Paint Matching</h3>
                                 <p>Bring us any color sample and we'll create a perfect match using our state-of-the-art Benjamin Moore color matching system.</p>
@@ -205,8 +178,7 @@
                                 <span class="service-tag">Specialty Service</span>
                             </div>
                             
-                            <div class="service-card featured">
-                                <div class="service-badge">7 Days</div>
+                            <div class="service-card">
                                 <div class="service-icon"><i class="fa-solid fa-fire-flame-simple"></i></div>
                                 <h3>Propane Tank Filling</h3>
                                 <p>Safe, simple, and convenient propane filling service available every day of the week. All tank sizes welcome!</p>
