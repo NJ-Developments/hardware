@@ -4,7 +4,10 @@
     "ignore": [
       "firebase.json",
       "**/.*",
-      "**/node_modules/**"
+      "**/node_modules/**",
+      "INSPIRATION_RESEARCH.md",
+      "Katz ACE Hardware _.html",
+      "public/**"
     ]
   }
 }
