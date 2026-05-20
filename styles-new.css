@@ -635,6 +635,8 @@ button {
     align-items: center;
     justify-content: center;
     padding: 0 var(--space-xl);
+    max-width: 100%;
+    overflow: visible;
 }
 
 /* Main Menu */
@@ -653,6 +655,7 @@ button {
     align-items: center;
     justify-content: center;
     gap: var(--space-xs);
+    flex-wrap: nowrap;
 }
 
 .menu-navigation-container > .menu > li {
@@ -669,6 +672,7 @@ button {
     color: var(--gray-700);
     position: relative;
     transition: color var(--transition-fast);
+    white-space: nowrap;
 }
 
 .menu-navigation-container > .menu > li > a::after {
@@ -808,13 +812,31 @@ button {
     transform: translateY(-2px);
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
     .nav-socials {
         display: none;
     }
-    
+
+    .menu-wrap .full-wrap {
+        padding: 0 var(--space-md);
+    }
+
+    .menu-navigation-container > .menu > li > a {
+        padding: var(--space-lg) var(--space-sm);
+        font-size: 0.8rem;
+        letter-spacing: 0.3px;
+    }
+}
+
+@media (max-width: 992px) {
     .nav-btn.rewards {
         display: none;
+    }
+
+    .menu-navigation-container > .menu > li > a {
+        padding: var(--space-md) var(--space-xs);
+        font-size: 0.75rem;
+        letter-spacing: 0.2px;
     }
 }
 
@@ -3536,7 +3558,7 @@ a[href^="tel:"].slide-btn i {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--space-lg);
     padding: var(--space-3xl) var(--space-xl);
     max-width: 1400px;
