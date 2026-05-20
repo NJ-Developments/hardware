@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh api:*)",
+      "WebFetch(domain:www.katzhardware.com)",
+      "Bash(firebase deploy:*)",
+      "Bash(nslookup:*)",
+      "Bash(firebase projects:list:*)",
+      "Bash(firebase hosting:sites:list:*)",
+      "Bash(firebase hosting:rollback:*)",
+      "Bash(firebase hosting:releases:list:*)",
+      "Bash(firebase hosting:channel:list:*)",
+      "Bash(firebase --help:*)",
+      "Bash(git clone:*)",
+      "Bash(curl:*)",
+      "WebFetch(domain:www.acehardware.com)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(git pull:*)",
+      "Bash(git remote set-url:*)",
+      "WebSearch"
+    ]
+  }
+}
