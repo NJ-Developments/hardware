@@ -3380,13 +3380,19 @@ a[href^="tel:"].slide-btn i {
     
     .nivoSlider,
     .nivoSlider img.slide {
-        height: 420px;
+        height: 460px;
     }
 
-    .slidecap {
+    .caption-display {
         bottom: auto;
         top: 50%;
         transform: translateY(-50%);
+    }
+
+    .caption-display .slidecap {
+        top: auto;
+        bottom: auto;
+        transform: none;
     }
     
     .slidecap h1 {
