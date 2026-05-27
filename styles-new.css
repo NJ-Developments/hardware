@@ -3380,11 +3380,13 @@ a[href^="tel:"].slide-btn i {
     
     .nivoSlider,
     .nivoSlider img.slide {
-        height: 300px;
+        height: 420px;
     }
-    
+
     .slidecap {
-        bottom: 50px;
+        bottom: auto;
+        top: 50%;
+        transform: translateY(-50%);
     }
     
     .slidecap h1 {
@@ -4144,11 +4146,13 @@ a.animated-underline:hover::after {
 @media (max-width: 896px) and (orientation: landscape) {
     .nivoSlider,
     .nivoSlider img.slide {
-        height: 280px;
+        height: 320px;
     }
-    
+
     .slidecap {
-        bottom: 40px;
+        bottom: auto;
+        top: 50%;
+        transform: translateY(-50%);
     }
     
     .slidecap h1 {
